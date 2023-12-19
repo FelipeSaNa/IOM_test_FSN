@@ -1,0 +1,30 @@
+# Author: FSN
+# Maintainers: FSN
+# Copyright:   2021, FSN GPL v2 or later
+# =============================================
+#
+# getwd()
+# setwd("/Users/felipesn/Documents/R/OIM")
+# getwd()
+# require(pacman)
+# pacman::p_load(here, ProjectTemplate)
+# create.project(project.name = "OIM_feria_identidad_tapachula", template = "minimal",
+#                rstudio.project = TRUE)
+
+# cleaning
+library(here)
+file.rename(here("cache"), here("write"))
+unlink(here("config"), recursive = T)
+dir.create(here("data", "raw"))
+dir.create("plots")
+dir.create(here("data", "clean"))
+file.remove(here("data", "README.md"))
+file.remove(here("README.md"))
+file.remove(here("munge", "README.md"))
+file.remove(here("munge", "01-A.R"))
+file.remove(here("src", "README.md"))
+file.remove(here("src", "eda.R"))
+file.remove(here("write", "README.md"))
+file.rename(here("munge"), here("scripts"))
+unlink(here("src"), recursive = T)
+
